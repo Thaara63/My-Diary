@@ -1,0 +1,153 @@
+@import url('https://fonts.cdnfonts.com/css/shifty-notes');
+@import url('https://fonts.cdnfonts.com/css/dynapuff');
+@import url('https://fonts.cdnfonts.com/css/playpen-sans');
+@import url('https://fonts.cdnfonts.com/css/sigmar');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --clr-body-bg: hsl(0 0% 90%);
+    --clr-text: hsl(0 0% 15%);
+    --clr-text-gray: hsl(0 0% 70%);
+    --clr-heading: hsl(0 0% 25%);
+    --clr-card1-bg: hsl(15, 5%, 84%);
+    --clr-card2-bg: hsl(0, 0%, 98%);
+    --clr-event: hsl(0, 0%, 18%);
+    --clr-text-gray2:hsl(0, 0%, 100%);
+
+}                
+
+                
+                
+
+                
+body{
+    /* overflow: hidden; */
+    background-color: var(--clr-body-bg);
+    font-family: "Montserrat", sans-serif;
+                                                                                  
+}
+
+.container{
+    font-weight: 500;
+    width: 100%;
+    height: 100vh;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    color: var(--clr-text);
+}
+
+.row-items{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+.first-div{
+    position: relative;
+}
+
+.content{
+    position: absolute;
+    top: 6%;
+    left: 6%;
+    border-radius: 35px;
+}
+
+.first{
+    /* font-family: 'Playpen Sans', sans-serif; */
+    background-color: var(--clr-card1-bg);
+    width: 88%;
+    height: 30%;
+
+}
+
+.calendar-box{
+    position: absolute;
+    top: 39%;
+    height: 55%;
+}
+
+
+.middle-div{
+    position: relative;
+
+}
+
+.middle{
+
+    background-color:var(--clr-card2-bg);
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 98%;
+    /* overflow: hidden; */
+
+}
+
+.last-div{
+    position: relative;
+}
+
+.last{
+    background-color: var(--clr-card1-bg);
+    width: 88%;
+    height: 88%;
+    padding-top: 35px;
+}
+
+.last h2{
+    display: inline;
+    padding: 35px 0;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+
+.prompts{
+    font-size: 17px; 
+    font-style: italic;
+    font-weight: 600;
+    color: var(--clr-heading);
+    text-align: center;
+    padding: 17px 20px;
+    white-space: pre-wrap;
+    background-color: var(--clr-card2-bg);
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 35px;
+    width: 88%;
+    max-height: 13%;
+    cursor: pointer;
+}
+
+
+/* .prompts .one{
+    top: 19%;
+}
+
+.prompts .two{
+    top: 35%;
+}
+.prompts .three{
+    top: 51%;
+}
+.prompts .four{
+    top: 67%;
+}
+.prompts .five{
+    top: 83%;
+} */
+
+.prompt-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    top: 6%;
+}
+

@@ -1,0 +1,67 @@
+<%- include('partials/themes.ejs') %>
+<div class="container text-center">
+    <div class="row-items row">
+        <div class="first-div col">
+            <div class="first content">
+                <div class="today-date">
+                    <div class="event-date">12th december 2022</div>
+                    <div class="edit-btn">Edit</div>
+                </div>
+                <div class="events">
+                    
+                </div>
+                
+            </div>
+            <div class="first content calendar-box">
+                <div class="calendar">
+                    <div class="month">
+                      <i class="fas fa-angle-left prev"></i>
+                      <div class="date"></div>
+                      <i class="fas fa-angle-right next"></i>
+                    </div>
+                    <div class="weekdays">
+                      <div>Sun</div>
+                      <div>Mon</div>
+                      <div>Tue</div>
+                      <div>Wed</div>
+                      <div>Thu</div>
+                      <div>Fri</div>
+                      <div>Sat</div>
+                    </div>
+                    <div class="days"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="middle-div col-5">
+            <div class="middle content">
+                <div class="add-event-header">
+                    <div class="date-title">09th March 2023</div>
+                    <%- include('partials/emoji.ejs') %>
+                    <button class="add-event-btn">Save</button>
+                  </div>
+                  <div class="add-event-body">
+                    <div class="add-event-input">
+                      <input type="text" placeholder="Title" class="event-name write-title" />
+                    </div>
+                    <div class="add-event-input-textarea">
+                      <textarea name="event-notes" class="event-notes" placeholder="Start Writing Here..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="last-div col">
+            <div class="last content">
+                <h2 class="prompt-heading">Prompts</h2>
+                <div class="prompt-container"></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="js/theme.js"></script>
+<script src="js/emoji.js"></script>
+<script src="js/calendar.js"></script>
+
+</body>
+</html>

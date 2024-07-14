@@ -1,0 +1,359 @@
+@import url('https://fonts.cdnfonts.com/css/playpen-sans');
+
+
+
+.calendar {
+  /* font-family: "poppins" , sans-serif; */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  /* justify-content: space-between; */
+  color: var(--clr-text);
+  border-radius: 35px;
+  background-color: var(--clr-card1-bg);
+}
+
+.calendar .month {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 50px 0 50px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.calendar .month .prev, .calendar .month .next {
+  cursor: pointer;
+}
+
+.calendar .month .prev:hover, .calendar .month .next:hover {
+  color: var(--clr-text-gray);
+}
+
+.calendar .weekdays {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.calendar .weekdays div {
+  width: 14.28%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar .days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.calendar .days .day {
+  width: 14.28%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--clr-text);
+  border: 1px solid var(--clr-heading);
+  border-radius: 5px;
+}
+.calendar .days .day:nth-child(7n + 1) {
+  border-left: 2px solid var(--clr-heading);
+}
+.calendar .days .day:nth-child(7n) {
+  border-right: 2px solid var(--clr-heading);
+}
+.calendar .days .day:nth-child(-n + 7) {
+  border-top: 2px solid var(--clr-heading);
+}
+.calendar .days .day:nth-child(n + 29) {
+  border-bottom: 2px solid var(--clr-heading);
+}
+
+.calendar .days .day:not(.prev-date, .next-date):hover {
+  color: var(--clr-text-gray2);
+  background-color: var(--clr-heading);
+}
+.calendar .days .prev-date,
+.calendar .days .next-date {
+  color: var(--clr-text-gray);
+}
+.calendar .days .active {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight:bold;
+  color: var(--clr-text-gray2);
+  background-color: var(--clr-heading);
+}
+.calendar .days .active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* box-shadow: 0 0 10px 2px var(--primary-clr); */
+  border-radius: 5px;
+}
+
+.calendar .days .today {
+  font-size: 1.2rem;
+}
+.calendar .days .event {
+  position: relative;
+}
+.calendar .days .event::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  width: 75%;
+  height: 2px;
+  border-radius: 30px;
+  transform: translateX(-50%);
+  background-color: var(--clr-event);
+}
+.calendar .days .day:hover.event::after {
+  background-color: var(--clr-text-gray2);
+}
+.calendar .days .active.event::after {
+  background-color: var(--clr-text-gray2);
+  bottom: 20%;
+}
+.calendar .days .active.event {
+  padding-bottom: 5px;
+}
+
+
+/* ----------RECENT HISTORY/ RECENT ENTRY--------- */
+
+
+.today-date {
+  /* font-family: sans-serif; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  padding-left: 20px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+
+.today-date .event-date {
+  font-size: 1.3rem;
+  font-weight: 800;
+
+}
+
+.events {
+  width: 100%;
+  height: 100%;
+  max-height: 120px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-overflow: ellipsis;
+
+  /* padding-left: 4px; */
+}
+
+.events .event {
+  position: relative;
+  width: 90%;
+  min-height: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 20px;
+  text-overflow: ellipsis;
+
+}
+.events .no-event {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--clr-text-gray);
+  font-style: italic;
+}
+
+.events .event .title {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  pointer-events: none;
+}
+
+.events .event .title .event-title {
+  font-size: 1rem;
+  font-weight: 700;
+
+}
+
+.events .event .event-description {
+  text-wrap: pretty;
+  max-height: 50%;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--clr-text);
+  pointer-events: none;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-description span{
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+
+.edit-btn {
+  position: absolute;
+  right: 6%;
+  display: flex;
+  cursor: pointer;
+  text-transform:uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  background-color: var(--clr-card2-bg);
+  /* outline:2px solid #e2dcdc; */
+  border-radius: 40px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+
+
+
+/* ----------MIDDLE PART DIARY ENTRY---------- */
+
+.add-event-header {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding: 0 20px;
+  color: var(--clr-heading);
+  /* border-bottom: 1px solid #f5f5f5; */
+}
+
+.add-event-header .date-title {
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-left: 15px;
+
+}
+
+.add-event-header .add-event-btn {
+  text-transform:uppercase;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  color: var(--clr-text);
+  background-color: var(--clr-card1-bg);
+  outline:2px solid #e2dcdc;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 5px 10px;
+
+}
+
+.add-event-header .add-event-btn:hover , .edit-btn:hover{
+  background-color: var(--clr-text-gray);
+  color: #fff;
+
+}
+
+.add-event-body {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  padding-top: 10px;
+}
+
+.add-event-body .add-event-input {
+  width: 90%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.add-event-body .add-event-input input, textarea{
+  width: 100%;
+  height: 100%;
+  font-size: 0.9rem;
+  outline: none;
+  border: none;
+  padding: 0 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--clr-heading);
+  background-color: var(--clr-card2-bg);
+
+
+}
+
+.add-event-body .add-event-input input::placeholder, textarea::placeholder{
+  color: var(--clr-heading);
+}
+
+.add-event-body .add-event-input .write-title{
+ text-wrap:wrap;
+ font-weight: 600;
+ font-size: 1.2rem;
+  max-height: 100px;
+}
+
+.add-event-body .add-event-input-textarea textarea{
+  height: 70%;
+  padding: 10px;
+  padding-top: 0;
+  resize: none;
+  max-height: 500px;
+
+}
+
+textarea::-webkit-scrollbar{
+  width: 0px;
+}

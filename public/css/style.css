@@ -1,0 +1,156 @@
+.emoji-wrapper{
+  background-color: var(--clr-card1-bg);
+  width: 300px;
+  height: 200px;
+  z-index: 1;
+  position: absolute;
+  top: 80px;
+  left: 63%;
+  justify-content: space-between;
+  align-items: center;
+  /* max-height: 0; */
+  display: none;
+  border-radius: 35px;
+  transform: translateX(-50%);
+  transition: max-height 0.5s ease;
+}
+
+.active {
+  display: flex;
+  max-height: 200px;
+}
+svg{
+  height:40px;
+   width:40px;
+
+}
+.svg-outline-placeholder{
+  position: absolute;
+  left: 400px;
+  cursor: pointer;
+}
+
+.emoji{
+  cursor: pointer;
+}
+
+.emoji-line{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5px;
+  height: 90%;
+}
+
+.svg-outline-saved{
+  position:absolute;
+  top: 80px;
+  left: 275px;
+  cursor:default;
+}
+
+
+/* -----Pick a theme css------ */
+
+.visually-hidden{
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space:nowrap;
+  width: 1px;
+}
+
+.color-picker > fieldset{
+  border: 0;
+  display: flex;
+  gap: 2rem;
+  width: fit-content;
+  background: var(--clr-card1-bg);
+  padding: 1rem 3rem;
+  margin-inline: auto;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.color-picker input[type="radio"]{
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  outline: 3px solid var(--radio-color, currentColor);
+  outline-offset:3px ;
+  border-radius: 50%;
+}
+
+.color-picker input[type="radio"]:checked{
+  background-color: var(--radio-color);
+}
+
+.color-picker input[type="radio"]#light{
+ --radio-color : rgb(97, 97, 97);
+}
+
+.color-picker input[type="radio"]#pink{
+  --radio-color : rgb(238, 90, 115);
+}
+
+.color-picker input[type="radio"]#blue{
+  --radio-color : rgb(33, 96, 204);
+}
+
+.color-picker input[type="radio"]#green{
+  --radio-color : rgb(23, 170, 47);
+}
+
+/* .color-picker input[type="radio"]#dark{
+  --radio-color : #232323;
+} */
+
+.pink,
+:root:has(#pink:checked){
+  --clr-body-bg: hsl(310 50% 90%);
+  --clr-text: hsl(310 50% 15%);
+  --clr-text-gray: hsl(327, 98%, 84%);
+  --clr-heading: hsl(310 50% 25%);
+  --clr-card1-bg: hsl(328, 100%, 78%);
+  --clr-card2-bg: hsl(327, 100%, 87%);
+  --clr-event: hsl(309, 12%, 22%);
+  --clr-text-gray2:hsl(0, 0%, 100%);
+}
+
+.blue,
+:root:has(#blue:checked){
+  --clr-body-bg: hsl(209 50% 90%);
+  --clr-text: hsl(209 50% 15%);
+  --clr-text-gray: hsl(209, 98%, 84%);
+  --clr-heading: hsl(209 50% 25%);
+  --clr-card1-bg: hsl(209, 100%, 78%);
+  --clr-card2-bg: hsl(209, 100%, 87%);
+  --clr-event: hsl(209, 12%, 22%);
+  --clr-text-gray2:hsl(0, 0%, 100%);
+}
+
+.green,
+:root:has(#green:checked){
+  --clr-body-bg: hsl(107, 58%, 86%);
+  --clr-text: hsl(65 60% 79%);
+  --clr-text-gray: hsl(120, 32%, 23%);
+  --clr-heading: hsl(65 60% 79%);
+  --clr-card1-bg: hsl(120, 38%, 12%);
+  --clr-card2-bg: hsl(113, 33%, 26%);
+  --clr-event: hsl(109, 12%, 22%);
+  --clr-text-gray2:hsl(120, 38%, 12%);
+}
+
+/* .dark,
+:root:has(#dark:checked){
+  --clr-body-bg: hsl(209 50% 10%);
+  --clr-text: hsl(209 50% 90%);
+  --clr-text-gray: hsl(210, 2%, 65%);
+  --clr-heading: hsl(198, 28%, 37%);
+  --clr-card1-bg: hsl(209, 50%, 5%);
+  --clr-card2-bg: hsl(196, 24%, 9%);
+  --clr-event: hsl(208, 25%, 34%);
+  --clr-text-gray2:hsl(0, 0%, 100%);
+} */
